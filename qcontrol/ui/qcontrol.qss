@@ -1,0 +1,3 @@
+StatusLabel[style="error"] {
+    color: red;
+}

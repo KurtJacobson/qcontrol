@@ -684,7 +684,7 @@
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>X</string>
@@ -706,7 +706,7 @@
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>X</string>
@@ -728,7 +728,7 @@
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>X</string>
@@ -750,7 +750,7 @@
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>X</string>
@@ -772,7 +772,7 @@
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>X</string>
@@ -794,7 +794,7 @@
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::ClickFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>X</string>
@@ -838,17 +838,17 @@
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>50</height>
+            <height>55</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>50</height>
+            <height>55</height>
            </size>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
+           <enum>Qt::NoFocus</enum>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -858,13 +858,10 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <property name="topMargin">
-            <number>5</number>
-           </property>
-           <property name="rightMargin">
-            <number>9</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>5</number>
+            <number>0</number>
            </property>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -873,22 +870,6 @@
                <property name="spacing">
                 <number>0</number>
                </property>
-               <item>
-                <spacer name="verticalSpacer_2">
-                 <property name="focusPolicy">
-                  <enum>Qt::ClickFocus</enum>
-                 </property>
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
                <item>
                 <widget class="StatusLabel" name="statuslabel_9">
                  <property name="font">
@@ -904,11 +885,11 @@
 	color: red;
 }</string>
                  </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 <property name="style" stdset="0">
+                  <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:limit&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'+ soft limit' if ch[0][0] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[0].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -957,10 +938,13 @@
                 </font>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
+                <enum>Qt::NoFocus</enum>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -968,7 +952,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_18">
+              <widget class="StatusLabel" name="statuslabel_18">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -978,10 +962,6 @@
                <property name="font">
                 <font>
                  <family>Monospace</family>
-                 <pointsize>9</pointsize>
-                 <weight>50</weight>
-                 <italic>false</italic>
-                 <bold>false</bold>
                 </font>
                </property>
                <property name="focusPolicy">
@@ -991,7 +971,10 @@
                 <string>REL</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'' if ch[0][0] else 'error' &quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -1042,17 +1025,17 @@
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>50</height>
+            <height>55</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>50</height>
+            <height>55</height>
            </size>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
+           <enum>Qt::NoFocus</enum>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -1062,13 +1045,10 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <property name="topMargin">
-            <number>5</number>
-           </property>
-           <property name="rightMargin">
-            <number>9</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>5</number>
+            <number>0</number>
            </property>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -1078,20 +1058,27 @@
                 <number>0</number>
                </property>
                <item>
-                <spacer name="verticalSpacer_3">
+                <widget class="StatusLabel" name="statuslabel_20">
+                 <property name="font">
+                  <font>
+                   <family>Monospace</family>
+                  </font>
+                 </property>
                  <property name="focusPolicy">
                   <enum>Qt::ClickFocus</enum>
                  </property>
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
+                 <property name="styleSheet">
+                  <string notr="true">StatusLable {
+	color: red;
+}</string>
                  </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
+                 <property name="style" stdset="0">
+                  <string>error</string>
                  </property>
-                </spacer>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[1].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QLabel" name="label_10">
@@ -1138,10 +1125,13 @@
                 </font>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
+                <enum>Qt::NoFocus</enum>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][1]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -1223,17 +1213,17 @@
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>50</height>
+            <height>55</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>50</height>
+            <height>55</height>
            </size>
           </property>
           <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
+           <enum>Qt::NoFocus</enum>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -1243,13 +1233,10 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <property name="topMargin">
-            <number>5</number>
-           </property>
-           <property name="rightMargin">
-            <number>9</number>
+            <number>0</number>
            </property>
            <property name="bottomMargin">
-            <number>5</number>
+            <number>0</number>
            </property>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -1259,20 +1246,27 @@
                 <number>0</number>
                </property>
                <item>
-                <spacer name="verticalSpacer_4">
+                <widget class="StatusLabel" name="statuslabel_21">
+                 <property name="font">
+                  <font>
+                   <family>Monospace</family>
+                  </font>
+                 </property>
                  <property name="focusPolicy">
                   <enum>Qt::ClickFocus</enum>
                  </property>
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
+                 <property name="styleSheet">
+                  <string notr="true">StatusLable {
+	color: red;
+}</string>
                  </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
+                 <property name="style" stdset="0">
+                  <string>error</string>
                  </property>
-                </spacer>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[2].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QLabel" name="label_23">
@@ -1319,10 +1313,13 @@
                 </font>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
+                <enum>Qt::NoFocus</enum>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
                 <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
@@ -1396,14 +1393,14 @@
         <item>
          <widget class="RecentFileComboBox" name="recentfilecombobox">
           <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
+           <enum>Qt::NoFocus</enum>
           </property>
          </widget>
         </item>
         <item>
          <widget class="GcodeEditor" name="gcodeeditor">
           <property name="focusPolicy">
-           <enum>Qt::ClickFocus</enum>
+           <enum>Qt::NoFocus</enum>
           </property>
           <property name="styleSheet">
            <string notr="true">QsciScintilla {
