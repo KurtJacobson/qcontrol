@@ -158,18 +158,6 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_5">
-        <property name="minimumSize">
-         <size>
-          <width>150</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>200</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="focusPolicy">
          <enum>Qt::ClickFocus</enum>
         </property>
@@ -220,7 +208,7 @@
          <item>
           <widget class="StatusLabel" name="statuslabel_12">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -238,14 +226,14 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;%3.1f\&quot; % ch[0][1]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;%6.1f\&quot; % ch[0][1]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="StatusLabel" name="statuslabel_11">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -263,7 +251,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:1.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot; {:4.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
@@ -272,18 +260,6 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_4">
-        <property name="minimumSize">
-         <size>
-          <width>160</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>220</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="focusPolicy">
          <enum>Qt::ClickFocus</enum>
         </property>
@@ -334,7 +310,7 @@
          <item>
           <widget class="StatusLabel" name="statuslabel_10">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -352,14 +328,14 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;%3.1f\&quot; % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;%5.0f\&quot; % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="StatusLabel" name="statuslabel_13">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -377,7 +353,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle[0].override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:1.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle[0].override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot; {:4.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
@@ -386,18 +362,6 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_12">
-        <property name="minimumSize">
-         <size>
-          <width>120</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>130</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="focusPolicy">
          <enum>Qt::ClickFocus</enum>
         </property>
@@ -448,7 +412,7 @@
          <item>
           <widget class="StatusLabel" name="statuslabel_19">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -466,7 +430,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:rapidrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:1.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:rapidrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot; {:4.0%}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
@@ -475,18 +439,6 @@
       </item>
       <item>
        <widget class="QFrame" name="frame_9">
-        <property name="minimumSize">
-         <size>
-          <width>220</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>250</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="focusPolicy">
          <enum>Qt::ClickFocus</enum>
         </property>
@@ -537,7 +489,7 @@
          <item>
           <widget class="StatusLabel" name="statuslabel_15">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -555,14 +507,14 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?diameter&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;\u00d8 %1.4f\&quot; % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?diameter&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;\u00d8 %6.4f\&quot; % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="StatusLabel" name="statuslabel_17">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
@@ -580,7 +532,7 @@
             <set>Qt::AlignCenter</set>
            </property>
            <property name="rules" stdset="0">
-            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?z_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;L %1.3f\&quot; % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+            <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?z_offset&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot; L %5.3f\&quot; % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
            </property>
           </widget>
          </item>
