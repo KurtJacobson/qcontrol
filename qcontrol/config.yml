@@ -1,0 +1,28 @@
+{% include "default_menubar.yml" %}
+
+qtdesigner:
+  ui_file: ( windows.mainwindow.kwargs.ui_file )
+  qss_file: ( application.kwargs.stylesheet )
+
+vcp:
+  name: QControl
+  version: v0.0.1
+  author: Kurt  Jacobson
+  description: >
+    Not Much
+
+data_plugins:
+  status:
+    kwargs:
+      cycle_time: 75
+
+windows:
+  mainwindow:
+    provider: qcontrol.qcontrol:QControlMainWindow
+    kwargs:
+      menu: ( default_menubar )
+      ui_file: {{ file.dir }}/ui/qcontrol.ui
+
+application:
+  kwargs:
+    stylesheet: {{ file.dir }}/ui/qcontrol.qss
