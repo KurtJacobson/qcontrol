@@ -23,6 +23,21 @@ windows:
       menu: ( default_menubar )
       ui_file: {{ file.dir }}/ui/qcontrol.ui
 
+dialogs:
+  feed_override_dialog: 
+    provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/feed_override_dialog.ui
+      modal: yes
+      frameless: yes
+
+  spindle_override_dialog: 
+    provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/speed_override_dialog.ui
+      modal: yes
+      frameless: yes
+
 application:
   kwargs:
     theme: windows
