@@ -1,3 +1,7 @@
+* {
+    font-family: "Monospace";
+}
+
 StatusLabel[style="error"] {
     color: red;
 }
