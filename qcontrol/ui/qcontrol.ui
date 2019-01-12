@@ -832,16 +832,11 @@
                  <property name="focusPolicy">
                   <enum>Qt::ClickFocus</enum>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">StatusLable {
-	color: red;
-}</string>
-                 </property>
                  <property name="style" stdset="0">
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[0].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[0].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[0].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -904,29 +899,12 @@
               </widget>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_18">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Monospace</family>
-                </font>
-               </property>
-               <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
-               </property>
-               <property name="text">
-                <string>REL</string>
-               </property>
+              <widget class="StatusLabel" name="statuslabel">
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
                <property name="rules" stdset="0">
-                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'' if ch[0][0] else 'error' &quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%s ' % ch[0].upper()&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -1019,16 +997,11 @@
                  <property name="focusPolicy">
                   <enum>Qt::ClickFocus</enum>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">StatusLable {
-	color: red;
-}</string>
-                 </property>
                  <property name="style" stdset="0">
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[1].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[1].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[1].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -1091,30 +1064,12 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_21">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Monospace</family>
-                 <pointsize>9</pointsize>
-                 <weight>50</weight>
-                 <italic>false</italic>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
-               </property>
-               <property name="text">
-                <string>REL</string>
-               </property>
+              <widget class="StatusLabel" name="statuslabel_2">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%s ' % ch[0].upper()&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -1207,16 +1162,11 @@
                  <property name="focusPolicy">
                   <enum>Qt::ClickFocus</enum>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">StatusLable {
-	color: red;
-}</string>
-                 </property>
                  <property name="style" stdset="0">
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[2].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].homed&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[2].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[2].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -1279,30 +1229,12 @@
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_26">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Monospace</family>
-                 <pointsize>9</pointsize>
-                 <weight>50</weight>
-                 <italic>false</italic>
-                 <bold>false</bold>
-                </font>
-               </property>
-               <property name="focusPolicy">
-                <enum>Qt::ClickFocus</enum>
-               </property>
-               <property name="text">
-                <string>REL</string>
-               </property>
+              <widget class="StatusLabel" name="statuslabel_30">
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%s ' % ch[0].upper()&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -1343,6 +1275,189 @@
          </widget>
         </item>
         <item>
+         <widget class="QFrame" name="frame_14">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>55</height>
+           </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_11">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="StatusLabel" name="statuslabel_22">
+                 <property name="font">
+                  <font>
+                   <family>Monospace</family>
+                  </font>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="style" stdset="0">
+                  <string>error</string>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[3].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[3].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[3].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[3].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[3].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_25">
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="text">
+                  <string>ABS</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="StatusLabel" name="statuslabel_18">
+                 <property name="font">
+                  <font>
+                   <family>Monospace</family>
+                  </font>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?abs&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="StatusLabel" name="statuslabel_23">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Monospace</family>
+                 <pointsize>30</pointsize>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+               <property name="textInteractionFlags">
+                <set>Qt::NoTextInteraction</set>
+               </property>
+               <property name="rules" stdset="0">
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.3f' % ch[0][3]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_28">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Monospace</family>
+                 <pointsize>9</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::ClickFocus</enum>
+               </property>
+               <property name="text">
+                <string>DEG</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_29">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>30</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Monospace</family>
+                 <pointsize>30</pointsize>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::ClickFocus</enum>
+               </property>
+               <property name="text">
+                <string>A</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
          <widget class="RecentFileComboBox" name="recentfilecombobox">
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
@@ -1361,6 +1476,49 @@
 }</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="ActionButton" name="actionbutton">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Run</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.run</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="actionbutton_2">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Pause</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.pause</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="ActionButton" name="actionbutton_3">
+            <property name="focusPolicy">
+             <enum>Qt::NoFocus</enum>
+            </property>
+            <property name="text">
+             <string>Abort</string>
+            </property>
+            <property name="actionName" stdset="0">
+             <string>program.abort</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -1393,6 +1551,11 @@
    <class>RecentFileComboBox</class>
    <extends>QComboBox</extends>
    <header>qtpyvcp.widgets.input_widgets.recent_file_combobox</header>
+  </customwidget>
+  <customwidget>
+   <class>ActionButton</class>
+   <extends>QPushButton</extends>
+   <header>qtpyvcp.widgets.button_widgets.action_button</header>
   </customwidget>
   <customwidget>
    <class>StatusLabel</class>

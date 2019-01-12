@@ -2,6 +2,10 @@
     font-family: "Monospace";
 }
 
+StatusLabel[style="warning"] {
+    color: rgb(255, 170, 0);
+}
+
 StatusLabel[style="error"] {
     color: red;
 }
