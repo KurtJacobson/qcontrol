@@ -24,18 +24,28 @@ windows:
       ui_file: {{ file.dir }}/ui/qcontrol.ui
 
 dialogs:
+  tool_dialog: 
+    provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/tool_dialog.ui
+      popup: yes
+
   feed_override_dialog: 
     provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
     kwargs:
       ui_file: {{ file.dir }}/dialogs/feed_override_dialog.ui
-      modal: yes
-      frameless: yes
+      popup: yes
 
-  spindle_override_dialog: 
+  speed_override_dialog: 
     provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
     kwargs:
       ui_file: {{ file.dir }}/dialogs/speed_override_dialog.ui
-      modal: yes
+      popup: yes
+
+  rapid_override_dialog: 
+    provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/rapid_override_dialog.ui
       popup: yes
 
 application:
