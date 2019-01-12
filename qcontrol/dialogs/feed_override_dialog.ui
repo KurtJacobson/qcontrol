@@ -32,6 +32,9 @@
    </item>
    <item>
     <widget class="ActionSlider" name="actionslider">
+     <property name="singleStep">
+      <number>5</number>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
