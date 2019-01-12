@@ -1454,6 +1454,9 @@
           <property name="focusPolicy">
            <enum>Qt::ClickFocus</enum>
           </property>
+          <property name="placeholderText">
+           <string>MDI</string>
+          </property>
          </widget>
         </item>
         <item>
