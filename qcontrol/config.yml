@@ -25,4 +25,5 @@ windows:
 
 application:
   kwargs:
+    theme: windows
     stylesheet: {{ file.dir }}/ui/qcontrol.qss
