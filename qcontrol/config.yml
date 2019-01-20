@@ -46,6 +46,12 @@ dialogs:
       ui_file: {{ file.dir }}/dialogs/rapid_override_dialog.ui
       popup: yes
 
+  tool_table:
+    provider: qtpyvcp.widgets.dialogs.base_dialog:BaseDialog
+    kwargs:
+      ui_file: {{ file.dir }}/dialogs/tool_table.ui
+      popup: yes
+
 application:
   kwargs:
     theme: windows
