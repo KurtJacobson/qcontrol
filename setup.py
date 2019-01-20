@@ -23,7 +23,7 @@ setup(
             'qcontrol=qcontrol',
         ],
     },
-    install_requires=[
-       'qtpyvcp>=0.1.9',
-    ],
+    #install_requires=[
+    #   'qtpyvcp>=0.1.9',
+    #],
 )
