@@ -39,12 +39,23 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="ToolTable" name="tooltable"/>
+       <widget class="ToolTable" name="tooltable">
+        <property name="currentToolColor" stdset="0">
+         <color>
+          <red>255</red>
+          <green>85</green>
+          <blue>0</blue>
+         </color>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QPushButton" name="pushButton_4">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="text">
            <string>Add Tool</string>
           </property>
@@ -52,6 +63,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_3">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="text">
            <string>Remove Tool</string>
           </property>
@@ -59,6 +73,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton_2">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="text">
            <string>Reset Tool Table</string>
           </property>
@@ -66,6 +83,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButton">
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
           <property name="text">
            <string>Save Tool Table</string>
           </property>
