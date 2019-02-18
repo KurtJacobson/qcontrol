@@ -26,7 +26,7 @@
       <set>Qt::AlignCenter</set>
      </property>
      <property name="rules" stdset="0">
-      <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle[0].override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Speed Override: {:4.0%}'.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+      <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:spindle.0.override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Speed Override: {:4.0%}'.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
      </property>
     </widget>
    </item>

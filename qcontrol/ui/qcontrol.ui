@@ -168,7 +168,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="rules" stdset="0">
-         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Feed:{:5.1f} {:4.0%}\&quot;.format(ch[0][1], ch[1])&quot;, &quot;name&quot;: &quot;Tool Data&quot;}]</string>
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings?feed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:feedrate&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Feed:{:5.1f} {:4.0%}\&quot;.format(ch[0], ch[1])&quot;, &quot;name&quot;: &quot;Tool Data&quot;}]</string>
         </property>
         <property name="dialogName" stdset="0">
          <string>feed_override_dialog</string>
@@ -187,7 +187,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="rules" stdset="0">
-         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:spindle[0].override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Speed:{:4.0f} {:4.0%}\&quot;.format(ch[0][2], ch[1])&quot;, &quot;name&quot;: &quot;Tool Data&quot;}]</string>
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:settings&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:spindle.0.override&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;Speed:{:4.0f} {:4.0%}\&quot;.format(ch[0][2], ch[1])&quot;, &quot;name&quot;: &quot;Spindle Data&quot;}]</string>
         </property>
         <property name="dialogName" stdset="0">
          <string>speed_override_dialog</string>
@@ -300,17 +300,55 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="GcodeBackplot" name="gcodebackplot">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="focusPolicy">
-            <enum>Qt::ClickFocus</enum>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="GcodeBackplot" name="gcodebackplot">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="ActionButton" name="actionbutton_8">
+               <property name="text">
+                <string>Spindle REV</string>
+               </property>
+               <property name="actionName" stdset="0">
+                <string>spindle.reverse</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="ActionButton" name="actionbutton_7">
+               <property name="text">
+                <string>Spindle OFF</string>
+               </property>
+               <property name="actionName" stdset="0">
+                <string>spindle.off</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="ActionButton" name="actionbutton_6">
+               <property name="text">
+                <string>Spindle FWD</string>
+               </property>
+               <property name="actionName" stdset="0">
+                <string>spindle.forward</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -546,6 +584,16 @@ Out</string>
              </property>
             </spacer>
            </item>
+           <item>
+            <widget class="ActionButton" name="actionbutton_5">
+             <property name="text">
+              <string>Maximize</string>
+             </property>
+             <property name="actionName" stdset="0">
+              <string>window.maximize</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </item>
         </layout>
@@ -613,7 +661,7 @@ Out</string>
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[0].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[0].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[0].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.0.fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.0.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.0.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -628,7 +676,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_6">
+                <widget class="StatusLabel" name="statuslabel_11">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -641,7 +689,7 @@ Out</string>
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?abs&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?axis=x&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -671,7 +719,7 @@ Out</string>
                 <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
-                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=x&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -778,7 +826,7 @@ Out</string>
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[1].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[1].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[1].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.1.fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.1.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.1.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -806,7 +854,7 @@ Out</string>
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?abs&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][1]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?axis=y&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -836,7 +884,7 @@ Out</string>
                 <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
-                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][1]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=y&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -943,7 +991,7 @@ Out</string>
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[2].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[2].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[2].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.2.fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.2.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.2.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -971,7 +1019,7 @@ Out</string>
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?abs&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?axis=z&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -1001,7 +1049,7 @@ Out</string>
                 <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
-                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=z&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
@@ -1096,7 +1144,7 @@ Out</string>
                   <string>error</string>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[3].min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[3].fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[3].homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint[3].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint[3].homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.3.min_soft_limit&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.3.fault&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.3.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.3.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'Fault' if ch[1] else 'Limit' if ch[0] else  'Homing' if ch[3] else 'Unhomed' if not ch[2] else ''&quot;, &quot;name&quot;: &quot;joint status&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.3.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;'warning' if ch[0] else 'error'&quot;, &quot;name&quot;: &quot;text color&quot;}]</string>
                  </property>
                 </widget>
                </item>
@@ -1124,14 +1172,14 @@ Out</string>
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                  <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?abs&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0][2]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?axis=a&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                  </property>
                 </widget>
                </item>
               </layout>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_26">
+              <widget class="StatusLabel" name="statuslabel_10">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -1154,7 +1202,7 @@ Out</string>
                 <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
-                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:axis?rel&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;'%.3f' % ch[0][3]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=a&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
