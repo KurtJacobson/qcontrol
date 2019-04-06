@@ -14,6 +14,9 @@ data_plugins:
     kwargs:
       cycle_time: 75
 
+  clock:
+    provider: qtpyvcp.plugins.clock:Clock
+
 windows:
   mainwindow:
     provider: qcontrol.qcontrol:QControlMainWindow
