@@ -621,9 +621,9 @@ Out</string>
          <number>1</number>
         </property>
         <item>
-         <widget class="QFrame" name="frame_6">
+         <widget class="DialogButton" name="a_axis_dro_4">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -631,25 +631,13 @@ Out</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>55</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>55</height>
+            <height>60</height>
            </size>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
            <property name="topMargin">
             <number>0</number>
            </property>
@@ -657,14 +645,14 @@ Out</string>
             <number>0</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <layout class="QHBoxLayout" name="horizontalLayout_21">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
+              <layout class="QVBoxLayout" name="verticalLayout_16">
                <property name="spacing">
                 <number>0</number>
                </property>
                <item>
-                <widget class="StatusLabel" name="statuslabel_9">
+                <widget class="StatusLabel" name="statuslabel_33">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -682,7 +670,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="label_32">
                  <property name="focusPolicy">
                   <enum>Qt::NoFocus</enum>
                  </property>
@@ -692,7 +680,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_11">
+                <widget class="StatusLabel" name="statuslabel_34">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -712,7 +700,7 @@ Out</string>
               </layout>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_3">
+              <widget class="StatusLabel" name="statuslabel_17">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -740,7 +728,7 @@ Out</string>
               </widget>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel">
+              <widget class="StatusLabel" name="statuslabel_35">
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
@@ -750,7 +738,7 @@ Out</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_7">
+              <widget class="QLabel" name="label_39">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -786,9 +774,9 @@ Out</string>
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="frame_7">
+         <widget class="DialogButton" name="a_axis_dro_3">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -796,25 +784,13 @@ Out</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>55</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>55</height>
+            <height>60</height>
            </size>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
            <property name="topMargin">
             <number>0</number>
            </property>
@@ -822,14 +798,14 @@ Out</string>
             <number>0</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <layout class="QHBoxLayout" name="horizontalLayout_19">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_6">
+              <layout class="QVBoxLayout" name="verticalLayout_14">
                <property name="spacing">
                 <number>0</number>
                </property>
                <item>
-                <widget class="StatusLabel" name="statuslabel_20">
+                <widget class="StatusLabel" name="statuslabel_28">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -847,7 +823,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_10">
+                <widget class="QLabel" name="label_29">
                  <property name="focusPolicy">
                   <enum>Qt::NoFocus</enum>
                  </property>
@@ -857,7 +833,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_7">
+                <widget class="StatusLabel" name="statuslabel_29">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -877,7 +853,7 @@ Out</string>
               </layout>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_4">
+              <widget class="StatusLabel" name="statuslabel_13">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -905,7 +881,7 @@ Out</string>
               </widget>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_2">
+              <widget class="StatusLabel" name="statuslabel_30">
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
@@ -915,7 +891,7 @@ Out</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_22">
+              <widget class="QLabel" name="label_35">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -951,9 +927,9 @@ Out</string>
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="frame_8">
+         <widget class="DialogButton" name="a_axis_dro_2">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -961,25 +937,13 @@ Out</string>
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>55</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>55</height>
+            <height>60</height>
            </size>
           </property>
           <property name="focusPolicy">
            <enum>Qt::NoFocus</enum>
           </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
            <property name="topMargin">
             <number>0</number>
            </property>
@@ -987,14 +951,14 @@ Out</string>
             <number>0</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <layout class="QHBoxLayout" name="horizontalLayout_18">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_8">
+              <layout class="QVBoxLayout" name="verticalLayout_13">
                <property name="spacing">
                 <number>0</number>
                </property>
                <item>
-                <widget class="StatusLabel" name="statuslabel_21">
+                <widget class="StatusLabel" name="statuslabel_26">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -1012,7 +976,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_23">
+                <widget class="QLabel" name="label_28">
                  <property name="focusPolicy">
                   <enum>Qt::NoFocus</enum>
                  </property>
@@ -1022,7 +986,7 @@ Out</string>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_8">
+                <widget class="StatusLabel" name="statuslabel_27">
                  <property name="font">
                   <font>
                    <family>Monospace</family>
@@ -1042,7 +1006,7 @@ Out</string>
               </layout>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_5">
+              <widget class="StatusLabel" name="statuslabel_12">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -1070,7 +1034,7 @@ Out</string>
               </widget>
              </item>
              <item>
-              <widget class="StatusLabel" name="statuslabel_30">
+              <widget class="StatusLabel" name="statuslabel_2">
                <property name="alignment">
                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
@@ -1080,7 +1044,7 @@ Out</string>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="label_27">
+              <widget class="QLabel" name="label_33">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -1116,7 +1080,7 @@ Out</string>
          </widget>
         </item>
         <item>
-         <widget class="ActionButton" name="actionbutton_4">
+         <widget class="DialogButton" name="a_axis_dro">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -1218,7 +1182,7 @@ Out</string>
                 <set>Qt::NoTextInteraction</set>
                </property>
                <property name="rules" stdset="0">
-                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=a&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.4f' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=a&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:program_units?text&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;('%.3f ' if ch[1] == 'in' else '%.3f') % ch[0]&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
                </property>
               </widget>
              </item>
