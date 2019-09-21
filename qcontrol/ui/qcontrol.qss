@@ -9,3 +9,23 @@ StatusLabel[style="warning"] {
 StatusLabel[style="error"] {
     color: red;
 }
+
+
+/* Wider scrollbars for touchscreen use */
+
+QScrollBar:vertical {
+    width: 35px;
+}
+
+QScrollBar:horizontal {
+    height: 35px;
+}
+
+QScrollBar::handle:vertical {
+     min-height: 40px;
+ }
+
+QScrollBar::handle:horizontal {
+     min-height: 40px;
+ }
+
