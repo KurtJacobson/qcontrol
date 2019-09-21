@@ -24,6 +24,22 @@
      <number>1</number>
     </property>
     <item>
+     <widget class="ActionButton" name="notificationButton">
+      <property name="font">
+       <font>
+        <family>Monospace</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="rules" stdset="0">
+       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;notifications:info_message&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Info Text&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;notifications:info_message&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Sheet&quot;, &quot;expression&quot;: &quot;\&quot;background-color: lightgreen\&quot; if ch[0] != '' else \&quot;background-color: \&quot;&quot;, &quot;name&quot;: &quot;Info Color&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;notifications:error_message&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Error Text&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;notifications:error_message&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Sheet&quot;, &quot;expression&quot;: &quot;\&quot;background-color: red\&quot; if ch[0] != '' else \&quot;background-color: \&quot;&quot;, &quot;name&quot;: &quot;Error Color&quot;}]</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <property name="spacing">
        <number>1</number>
